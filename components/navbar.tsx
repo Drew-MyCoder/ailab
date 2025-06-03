@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Bot, Menu, X } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { ThemeToggle } from "./theme-toggle"
 import Image from "next/image"
 // import { ThemeToggle } from "@/components/theme-toggle"
@@ -46,7 +46,7 @@ export function Navbar() {
         {/* Desktop navigation */}
         <nav className="hidden md:flex md:items-center md:space-x-6">
           <Link href="#contact" className="text-sm font-medium transition-colors hover:text-primary">
-            What's New
+            What&apos;s New
           </Link>
           <Button>Help</Button>
           <ThemeToggle />
@@ -75,7 +75,14 @@ export function Navbar() {
                 className="block text-sm font-medium transition-colors hover:text-primary"
                 onClick={toggleMenu}
               >
-                How It Works
+                Our Company
+              </Link>
+              <Link
+                href="#"
+                className="block text-sm font-medium transition-colors hover:text-primary"
+                onClick={toggleMenu}
+              >
+                Developers
               </Link>
               <Link
                 href="#pricing"
@@ -89,12 +96,12 @@ export function Navbar() {
                 className="block text-sm font-medium transition-colors hover:text-primary"
                 onClick={toggleMenu}
               >
-                Contact
+                What&apos;s New
               </Link>
               <div className="flex justify-start py-2">
                 <ThemeToggle />
               </div>
-              <Button size="sm" className="w-full">Get Started</Button>
+              <Button size="sm" className="w-full">Help</Button>
             </div>
           </div>
         )}

@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from "framer-motion";
-import { Shield, BarChart, FileCheck, Brain, Scale, Lock, Users, Settings, Activity } from "lucide-react";
+import { Shield, FileCheck, Brain, Scale } from "lucide-react";
 
 const features = [
   { icon: Shield, title: "Bias Detection", description: "Identify and mitigate biases in AI models and datasets with advanced fairness metrics." },
