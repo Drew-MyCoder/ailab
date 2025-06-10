@@ -9,10 +9,10 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-6">
           {/* Email Signup - Takes 3 columns on large screens */}
           <div className="space-y-4 lg:col-span-3">
-            <h1 className="text-4xl dark:text-white font-bold">Sign Up For Email Updates</h1>
+            <h1 className="lg:text-4xl dark:text-white font-bold">Sign Up For Email Updates</h1>
             <div className="flex space-x-2 flex-col gap-5 max-w-md">
-              <Input placeholder="Enter your email" type="email" className="max-w-[320px]" />
-              <Button type="submit" className="max-w-[220px] bg-[#FF6984] dark:text-white">Subscribe</Button>
+              <Input placeholder="Enter your email" type="email" className="lg:max-w-[320px]" />
+              <Button type="submit" className="lg:max-w-[220px] bg-[#FF6984] dark:text-white">Subscribe</Button>
             </div>
           </div>
           
