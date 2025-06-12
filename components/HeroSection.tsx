@@ -5,6 +5,7 @@
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
+import { GetEarlyAccessBtn } from "./get-early-access";
 // import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
@@ -98,7 +99,8 @@ export function HeroSection() {
                     <div className="bg-[#FF6984] w-12 h-11 rounded-xl flex items-center justify-center">
                     <ArrowRight />
                     </div>
-                    <p className="ml-3 mr-2">Get Started</p>
+                    {/* <p className="ml-3 mr-2">Get Started</p> */}
+                    <GetEarlyAccessBtn />
                   </div>
                 </Button>
               </motion.div>

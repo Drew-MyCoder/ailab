@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
+import { GetEarlyAccessBtn } from "./get-early-access"
 
 
 export function CTASection() {
@@ -25,7 +26,8 @@ export function CTASection() {
                     <div className="bg-[#FF6984] w-12 h-11 rounded-xl flex items-center justify-center">
                     <ArrowRight />
                     </div>
-                    <p className="ml-3 mr-2">Get Started</p>
+                    {/* <p className="ml-3 mr-2">Get Started</p> */}
+                    <GetEarlyAccessBtn />
                   </div>
                 </Button>
           </div>
