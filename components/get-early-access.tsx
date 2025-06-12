@@ -91,7 +91,7 @@ export function GetEarlyAccessBtn({ label = "Early Access" }) {
                         name="firstName"
                         value={formData.firstName}
                         onChange={handleChange}
-                        className="min-w-[300px] my-4 dark:text-white"
+                        className="min-w-[100px] my-4 dark:text-white"
                         required 
                         />
                         </div>
@@ -102,7 +102,7 @@ export function GetEarlyAccessBtn({ label = "Early Access" }) {
                         name="lastName"
                         value={formData.lastName}
                         onChange={handleChange}
-                        className="min-w-[300px] my-4"
+                        className="min-w-[100px] my-4"
                         required 
                         />
                         </div>
@@ -113,7 +113,7 @@ export function GetEarlyAccessBtn({ label = "Early Access" }) {
                                 name="email"
                                 value={formData.email}
                                 onChange={handleChange}
-                                className="min-w-[300px] my-4"
+                                className="min-w-[100px] my-4"
                                 required
                             />
                         </div>
