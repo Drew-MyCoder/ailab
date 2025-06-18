@@ -124,7 +124,7 @@ export function PricingSection() {
               </CardHeader>
 
               <CardContent className="flex-1">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">{/* Add your features here if needed */}</div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
               </CardContent>
 
               <CardFooter className="justify-center">
