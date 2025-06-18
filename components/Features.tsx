@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import { Shield, FileCheck, Brain, Scale } from "lucide-react";
 
 const features = [
-  { icon: Shield, title: "Bias Detection", description: "Identify and mitigate biases in AI models and datasets with advanced fairness metrics." },
-  { icon: Scale, title: "Fairness Metrics", description: "Ensure equitable outcomes across all demographic groups with actionable insights." },
-  { icon: FileCheck, title: "Compliance Checks", description: "Validate adherence to GDPR, EU AI Act, CCPA, and other global regulations." },
-  { icon: Brain, title: "Explainability Tools", description: "Understand AI decisions with clear, interpretable insights using SHAP, LIME, and more." },
+  { icon: Shield, title: "Bias,Fairness & Explainability", description: "Detect and mitigate biases, ensure equitable outcomes with fairness metrics, and gain interpretable insights using tools like SHAP and LIME." },
+  { icon: Scale, title: "Compliance, Privacy & Security", description: "Validate adherence to global regulations (GDPR, EU AI Act, CCPA), while safeguarding data through encryption, anonymization, and secure access controls." },
+  { icon: FileCheck, title: "Performance & Monitoring", description: "Evaluate accuracy, robustness, and reliability with industry benchmarks and monitor AI systems in real time for ongoing fairness and compliance" },
+  { icon: Brain, title: "Collaboration & Customization", description: "Empower teams with role-based access, shared dashboards, and customizable workflows tailored to industry-specific audit needs" },
 ];
 
 export function FeaturesSection() {
@@ -44,8 +44,8 @@ export function FeaturesSection() {
                <div className={`rounded-full p-3 ${index === 0 ? "bg-white/20" : "bg-[#FF6984]/10"}`}>
                     <feature.icon className={`h-6 w-6 ${index === 0 ? "text-white" : "text-[#FF6984]"}`} />
                   </div>
-                  <h3 className={`text-xl font-bold ${index === 0 ? "text-white" : ""}`}>{feature.title}</h3>
-                  <p className={`text-center ${index === 0 ? "text-white/90" : "text-muted-foreground"}`}>
+                  <h3 className={`text-xl font-bold pt-3 ${index === 0 ? "text-white" : ""}`}>{feature.title}</h3>
+                  <p className={`text-center ${index === 0 ? "text-white/90 text-start" : "text-muted-foreground text-start"}`}>
                     {feature.description}
                   </p>
             </motion.div>
