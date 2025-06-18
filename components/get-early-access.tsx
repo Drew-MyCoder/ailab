@@ -17,7 +17,7 @@ import { toast } from "sonner";
 
 
 
-export function GetEarlyAccessBtn({ label = "Early Access" }) {
+export function GetEarlyAccessBtn({ label = "Join Early Access" }) {
     const [isOpen, setIsOpen] = useState(false);
     const [formData, setFormData] = useState({
         firstName: "",
