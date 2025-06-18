@@ -7,7 +7,7 @@ export function CTASection() {
 
 
   return (
-    <section className="w-full py-16 md:py-24 bg-[#FF6984]/10">
+    <section className="w-full py-16 md:py-24 dark:bg-black/70">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <h2 className="text-2xl dark:text-white text-black font-medium tracking-tighter md:text-4xl/tight lg:text-5xl">
