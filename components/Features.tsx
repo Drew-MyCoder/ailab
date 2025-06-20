@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Shield, FileCheck, Brain, Scale } from "lucide-react";
 
 const features = [
-  { icon: Shield, title: "Bias,Fairness & Explainability", description: "Detect and mitigate biases, ensure equitable outcomes with fairness metrics, and gain interpretable insights using tools like SHAP and LIME." },
+  { icon: Shield, title: "Bias, Fairness & Explainability", description: "Detect and mitigate biases, ensure equitable outcomes with fairness metrics, and gain interpretable insights using tools like SHAP and LIME." },
   { icon: Scale, title: "Compliance, Privacy & Security", description: "Validate adherence to global regulations (GDPR, EU AI Act, CCPA), while safeguarding data through encryption, anonymization, and secure access controls." },
   { icon: FileCheck, title: "Performance & Monitoring", description: "Evaluate accuracy, robustness, and reliability with industry benchmarks and monitor AI systems in real time for ongoing fairness and compliance" },
   { icon: Brain, title: "Collaboration & Customization", description: "Empower teams with role-based access, shared dashboards, and customizable workflows tailored to industry-specific audit needs" },
