@@ -16,7 +16,7 @@ const raleway = localFont({
 
 export const metadata: Metadata = {
   title: "Clean Pigg AI Lab",
-  description: "An AI Auditing Platform",
+  description: "AI Auditing Platform",
 };
 
 export default function RootLayout({
