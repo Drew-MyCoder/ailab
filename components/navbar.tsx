@@ -20,7 +20,7 @@ export function Navbar() {
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center space-x-6">
           <Link href="/" className="flex items-center space-x-2">
-            <Image src="/Vector.png" width={10} height={10} alt="cpal logo" className="h-8 w-8" />
+            <Image src="/layer.png" width={10} height={10} alt="cpal logo" className="h-8 w-8" />
           </Link>
           <div className="hidden lg:flex lg:items-center lg:space-x-6">
           <Link href="#features" className="text-sm font-medium transition-colors hover:text-primary">
