@@ -1,20 +1,64 @@
+'use client';
+
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { useState } from "react";
+import { toast } from "sonner";
+import { addSubscription } from "@/lib/actions";
 
 export function Footer() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [subscriptionData, setSubscriptionData] = useState({
+      email: ''
+  });
+  
+      const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+          const { name, value } = e.target;
+          setSubscriptionData({
+              ...subscriptionData,
+              [name]: value
+          });
+      };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    const formData = new FormData(e.currentTarget);
+
+    const res = await addSubscription(formData)
+    if (res?.successMessage) {
+        toast.success("Successfully subscribed to CleanPigg AILab!");
+        setSubscriptionData({  email: "" });
+      } else {
+          toast.error("Submission failed. Please try again.");
+      } setIsSubmitting(false)
+  };
+
   return (
     <footer className="w-full border-t bg-background">
       <div className="container px-4 md:px-6 py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-6">
           {/* Email Signup - Takes 3 columns on large screens */}
+          
           <div className="space-y-4 lg:col-span-3">
-            <h1 className="lg:text-4xl dark:text-white font-bold">Sign Up For Email Updates</h1>
+            <form onSubmit={handleSubmit}>
+            <h1 className="lg:text-4xl dark:text-white font-bold pb-6">Sign Up For Email Updates</h1>
             <div className="flex space-x-2 flex-col gap-5 max-w-md">
-              <Input placeholder="Enter your email" type="email" className="lg:max-w-[320px]" />
-              <Button type="submit" className="lg:max-w-[220px] bg-[#FF6984] dark:text-white">Subscribe</Button>
+              <Input 
+                placeholder="Enter your email" 
+                name="email" type="email" 
+                className="lg:max-w-[320px]"
+                value={subscriptionData.email}
+                onChange={handleChange}
+                required
+                disabled={isSubmitting} />
+              <Button type="submit" className="lg:max-w-[220px] bg-[#FF6984] dark:text-white" disabled={isSubmitting}>{isSubmitting ? "subscribing" : "Subscribe"}</Button>
             </div>
+            </form>
           </div>
+          
           
           {/* Legal - Takes 1 column on large screens */}
           <div className="space-y-4">

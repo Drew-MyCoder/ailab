@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import localFont from "next/font/local";
+import { Toaster } from "sonner";
 
 const raleway = localFont({
   src: [
@@ -32,6 +33,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange={false}>
           <Navbar />
           <main>{children}</main>
+          <Toaster />
           <Footer />
         </ThemeProvider>
       </body>

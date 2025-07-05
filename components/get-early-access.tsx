@@ -8,30 +8,21 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { z } from "zod";
 import { useState } from "react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { toast } from "sonner";
-
-
+import { addRegistration } from "@/lib/actions";
 
 export function GetEarlyAccessBtn({ label = "Join Early Access" }) {
     const [isOpen, setIsOpen] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
         email: ''
     });
-
-
-    const schema = z.object({
-        firstName: z.string().min(3, { message: "Firstname must be at least 3 characters" }),
-        lastName: z.string().min(3, { message: "Lastname must be at least 3 characters" }),
-        email: z.string().email({ message: "Invalid email address" }),
-    });
-
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setFormData({
@@ -39,30 +30,19 @@ export function GetEarlyAccessBtn({ label = "Join Early Access" }) {
             [name]: value
         });
     };
-    
+
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        try {
-            const validatedData = await schema.parse(formData);
-            if (validatedData) {
-                console.log(validatedData);
-                toast.success("form subsmission successful")
+        const formData = new FormData(e.currentTarget)
+        const res = await addRegistration(formData)
+        if (res?.successMessage) {
+                toast.success("Successfully joined early access!");
+                setFormData({ firstName: "", lastName: "", email: "" });
+                setIsOpen(false);
             } else {
-                toast.error('form validation error')
-            }
-            
-
-        } catch(error) {
-            console.error(error);
-            if (error instanceof z.ZodError) {
-                toast.error('validation error')
-            } else {
-                console.error('form submission error:', error);
-
-                toast.error('An unexpected error occurred');
-            }
-        }
-    };
+                toast.error("Submission failed. Please try again.");
+        } setIsSubmitting(false)
+    }
 
     return (
         <>
@@ -71,65 +51,74 @@ export function GetEarlyAccessBtn({ label = "Join Early Access" }) {
             </Button>
             <AlertDialog open={isOpen} onOpenChange={setIsOpen}>
                 <AlertDialogTrigger asChild></AlertDialogTrigger>
-            <AlertDialogContent>
-                <AlertDialogHeader>
-                    <AlertDialogTitle className="text-2xl text-[#FF6984] text-center">
-                        Join Our Early Access
-                    </AlertDialogTitle>
-                    <AlertDialogDescription className="text-center">
-            Early access clients get exclusive pearls and benefits.  
-                    </AlertDialogDescription>
-                </AlertDialogHeader>
-                <div className="flex flex-col items-center justify-center">
-                    <form 
-                    onSubmit={handleSubmit}
-                    className="flex flex-col items-center justify-center gap-4 my-4">
-                        <div className="space-y-1">
-                        <Label className="text-muted-foreground">Firstname</Label>
-                        <Input
-                        type="text"
-                        name="firstName"
-                        value={formData.firstName}
-                        onChange={handleChange}
-                        className="min-w-[100px] my-4 dark:text-white"
-                        required 
-                        />
-                        </div>
-                        <div className="space-y-1">
-                        <Label className="text-muted-foreground">Laststname</Label>
-                        <Input
-                        type="text"
-                        name="lastName"
-                        value={formData.lastName}
-                        onChange={handleChange}
-                        className="min-w-[100px] my-4"
-                        required 
-                        />
-                        </div>
-                        <div className="space-y-1 w-full">
-                            <Label className="text-muted-foreground">Email</Label>
-                            <Input
-                                type="email"
-                                name="email"
-                                value={formData.email}
-                                onChange={handleChange}
-                                className="min-w-[100px] my-4"
-                                required
-                            />
-                        </div>
-                        <Button type="submit" className="w-full mt-4 bg-[#FF6984]">
-                            Get Early Access
+                <AlertDialogContent>
+                    <AlertDialogHeader>
+                        <AlertDialogTitle className="text-2xl text-[#FF6984] text-center">
+                            Join Our Early Access
+                        </AlertDialogTitle>
+                        <AlertDialogDescription className="text-center">
+                            Early access clients get exclusive pearls and benefits.  
+                        </AlertDialogDescription>
+                    </AlertDialogHeader>
+                    <div className="flex flex-col items-center justify-center">
+                        <form 
+                            onSubmit={handleSubmit}
+                            className="flex flex-col items-center justify-center gap-4 my-4">
+                            <div className="space-y-1">
+                                <Label className="text-muted-foreground">First Name</Label>
+                                <Input
+                                    type="text"
+                                    name="firstName"
+                                    value={formData.firstName}
+                                    onChange={handleChange}
+                                    className="min-w-[100px] my-4 dark:text-white"
+                                    required 
+                                    disabled={isSubmitting}
+                                />
+                            </div>
+                            <div className="space-y-1">
+                                <Label className="text-muted-foreground">Last Name</Label>
+                                <Input
+                                    type="text"
+                                    name="lastName"
+                                    value={formData.lastName}
+                                    onChange={handleChange}
+                                    className="min-w-[100px] my-4"
+                                    required 
+                                    disabled={isSubmitting}
+                                />
+                            </div>
+                            <div className="space-y-1 w-full">
+                                <Label className="text-muted-foreground">Email</Label>
+                                <Input
+                                    type="email"
+                                    name="email"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    className="min-w-[100px] my-4"
+                                    required
+                                    disabled={isSubmitting}
+                                />
+                            </div>
+                            <Button 
+                                type="submit" 
+                                className="w-full mt-4 bg-[#FF6984]"
+                                disabled={isSubmitting}
+                            >
+                                {isSubmitting ? "Submitting..." : "Get Early Access"}
+                            </Button>
+                        </form>
+                        <Button 
+                            variant="outline"
+                            onClick={() => setIsOpen(false)}
+                            className="mt-4"
+                            disabled={isSubmitting}
+                        >
+                            Close
                         </Button>
-                    </form>
-                    <Button 
-                    variant="outline"
-                    onClick={() => setIsOpen(false)}
-                    className="mt-4">
-                        Close
-                    </Button>
-                </div>
-            </AlertDialogContent>
-        </AlertDialog>
+                    </div>
+                </AlertDialogContent>
+            </AlertDialog>
         </>
     );
 }
