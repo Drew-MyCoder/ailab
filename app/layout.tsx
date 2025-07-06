@@ -31,7 +31,7 @@ export default function RootLayout({
         className={`${raleway.className} antialiased`}
       >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange={false}>
-          <Navbar />
+          {/* <Navbar /> */}
           <main>{children}</main>
           <Toaster />
           <Footer />
