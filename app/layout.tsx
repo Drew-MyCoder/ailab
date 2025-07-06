@@ -20,6 +20,8 @@ export const metadata: Metadata = {
   description: "AI Auditing Platform",
 };
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+
 export default function RootLayout({
   children,
 }: Readonly<{
