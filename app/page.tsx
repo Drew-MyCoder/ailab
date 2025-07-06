@@ -1,20 +1,20 @@
-// import { BenefitsSection } from "@/components/benefits";
+import { BenefitsSection } from "@/components/benefits";
 import { CTASection } from "@/components/cta-section";
-// import { FeaturesSection } from "@/components/Features";
-// import { HeroSection } from "@/components/HeroSection";
-// import { HowItWorksSection } from "@/components/How-It-works";
-// import { PricingSection } from "@/components/pricing";
+import { FeaturesSection } from "@/components/Features";
+import { HeroSection } from "@/components/HeroSection";
+import { HowItWorksSection } from "@/components/How-It-works";
+import { PricingSection } from "@/components/pricing";
 
-// className="flex flex-col min-h-screen"
+
 
 export default function Home() {
   return (
-    <div >
-      {/* <HeroSection /> */}
-      {/* <FeaturesSection /> */}
-      {/* <HowItWorksSection /> */}
-      {/* <BenefitsSection /> */}
-      {/* <PricingSection /> */}
+    <div className="flex flex-col min-h-screen">
+      <HeroSection />
+      <FeaturesSection />
+      <HowItWorksSection />
+      <BenefitsSection />
+      <PricingSection />
       <CTASection />
     </div>
   )

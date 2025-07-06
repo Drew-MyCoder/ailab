@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-// import { Navbar } from "@/components/navbar";
-// import { Footer } from "@/components/footer";
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
 import localFont from "next/font/local";
 import { Toaster } from "sonner";
 
@@ -31,10 +31,10 @@ export default function RootLayout({
         className={`${raleway.className} antialiased`}
       >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange={false}>
-          {/* <Navbar /> */}
+          <Navbar />
           <main>{children}</main>
           <Toaster />
-          {/* <Footer /> */}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
