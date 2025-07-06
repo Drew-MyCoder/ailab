@@ -121,15 +121,13 @@
   }
 }
 
-/* Add this to your globals.css or create a new CSS file */
 
-/* Ensure full width on all devices */
+
 html, body {
   width: 100%;
   overflow-x: hidden;
 }
 
-/* Main container fixes */
 .main-container {
   width: 100vw;
   min-width: 100%;
@@ -137,9 +135,8 @@ html, body {
   padding: 0;
 }
 
-/* Mobile landscape specific fixes */
 @media screen and (orientation: landscape) and (max-height: 500px) {
-  /* Ensure sections take full width in landscape */
+  
   section {
     width: 100vw;
     min-width: 100%;
@@ -147,7 +144,6 @@ html, body {
     margin-right: 0;
   }
   
-  /* Fix container alignment */
   .container {
     width: 100%;
     max-width: none;
@@ -156,7 +152,6 @@ html, body {
     padding-right: 1rem;
   }
   
-  /* Center content properly */
   .flex {
     justify-content: center;
   }
@@ -166,7 +161,6 @@ html, body {
   }
 }
 
-/* Alternative: Use viewport units for consistent width */
 @media screen and (max-width: 768px) {
   .responsive-section {
     width: 100vw;
@@ -175,12 +169,11 @@ html, body {
   }
 }
 
-/* Prevent horizontal scrolling */
 * {
   box-sizing: border-box;
 }
 
-/* Ensure sections are properly centered */
+
 .section-wrapper {
   width: 100%;
   display: flex;
@@ -188,3 +181,4 @@ html, body {
   align-items: center;
   flex-direction: column;
 }
+
