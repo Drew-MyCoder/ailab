@@ -123,11 +123,15 @@
 
 
 
+/* Base styles for preventing horizontal scroll */
 html, body {
   width: 100%;
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
+/* Main container full width */
 .main-container {
   width: 100vw;
   min-width: 100%;
@@ -135,45 +139,12 @@ html, body {
   padding: 0;
 }
 
-@media screen and (orientation: landscape) and (max-height: 500px) {
-  
-  section {
-    width: 100vw;
-    min-width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-  }
-  
-  .container {
-    width: 100%;
-    max-width: none;
-    margin: 0;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  
-  .flex {
-    justify-content: center;
-  }
-  
-  .text-center {
-    text-align: center;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .responsive-section {
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
-  }
-}
-
+/* Global box-sizing */
 * {
   box-sizing: border-box;
 }
 
-
+/* Section wrapper for centering content */
 .section-wrapper {
   width: 100%;
   display: flex;
@@ -182,3 +153,114 @@ html, body {
   flex-direction: column;
 }
 
+/* Landscape orientation styles for mobile devices */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+  /* Ensure sections take full width */
+  section {
+    width: 100vw;
+    min-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Container adjustments for landscape */
+  .container {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Navbar specific landscape adjustments */
+  header .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Ensure navbar content stays properly aligned */
+  .navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* Center flex items where needed */
+  .flex {
+    justify-content: center;
+  }
+
+  /* Center text where needed */
+  .text-center {
+    text-align: center;
+  }
+
+  /* Adjust navbar height for landscape if needed */
+  header {
+    height: auto;
+    min-height: 3rem;
+  }
+
+  /* Ensure mobile menu button stays on the right */
+  .mobile-menu-btn {
+    margin-left: auto;
+  }
+}
+
+/* General mobile styles */
+@media screen and (max-width: 768px) {
+  /* Responsive section full width */
+  .responsive-section {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
+
+  /* Ensure navbar container behaves properly on mobile */
+  header .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Additional navbar-specific landscape fixes */
+@media screen and (orientation: landscape) and (max-width: 1024px) {
+  /* Ensure navbar items don't get centered inappropriately */
+  header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Logo section stays left */
+  .navbar-logo-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+  }
+
+  /* Right section stays right */
+  .navbar-right-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-shrink: 0;
+  }
+
+  /* Prevent navbar flex items from centering */
+  header .flex {
+    justify-content: space-between !important;
+  }
+}
+
+/* Tablet landscape specific adjustments */
+@media screen and (orientation: landscape) and (min-width: 769px) and (max-width: 1024px) {
+  /* Adjust container max-width for tablets */
+  .container {
+    max-width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}

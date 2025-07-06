@@ -16,13 +16,13 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-4">
-      <div className="container flex h-16 items-center justify-between">
-        {/* Logo section - always stays left */}
-        <div className="flex items-center space-x-6 flex-shrink-0">
+      <div className="container flex h-16 items-center navbar-content">
+        {/* Logo section - with specific class for CSS targeting */}
+        <div className="flex items-center space-x-6 flex-shrink-0 navbar-logo-section">
           <Link href="/" className="flex items-center space-x-2">
             <Image src="/Vector.png" width={10} height={10} alt="cpal logo" className="h-8 w-8" />
           </Link>
-          {/* Desktop navigation links - hidden on mobile/tablet */}
+          {/* Desktop navigation links */}
           <div className="hidden lg:flex lg:items-center lg:space-x-6">
             <Link href="#features" className="text-sm font-medium transition-colors hover:text-primary">
               Features
@@ -39,9 +39,9 @@ export function Navbar() {
           </div>
         </div>
 
-        {/* Right side content */}
-        <div className="flex items-center space-x-4">
-          {/* Desktop navigation - hidden on mobile/tablet */}
+        {/* Right side content - with specific class for CSS targeting */}
+        <div className="flex items-center space-x-4 navbar-right-section">
+          {/* Desktop navigation */}
           <nav className="hidden lg:flex lg:items-center lg:space-x-6">
             <Link href="#contact" className="text-sm font-medium transition-colors hover:text-primary">
               What&apos;s New
@@ -50,9 +50,9 @@ export function Navbar() {
             <ThemeToggle />
           </nav>
 
-          {/* Mobile menu button - visible on mobile/tablet */}
+          {/* Mobile menu button */}
           <button 
-            className="lg:hidden flex items-center justify-center p-2" 
+            className="lg:hidden flex items-center justify-center p-2 mobile-menu-btn" 
             onClick={toggleMenu} 
             aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
           >
