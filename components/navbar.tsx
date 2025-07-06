@@ -20,13 +20,13 @@ export function Navbar() {
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center space-x-6">
           <Link href="/" className="flex items-center space-x-2">
-            <Image src="/Vector.png" width={10} height={10} alt="cpal logo" className="h-8 w-8" />
+            <Image src="/layer.png" width={32} height={32} alt="cpal logo" className="h-8 w-auto object-contain" />
           </Link>
           <div className="hidden lg:flex lg:items-center lg:space-x-6">
           <Link href="#features" className="text-sm font-medium transition-colors hover:text-primary">
             Features
           </Link>
-          <Link href="#how-it-works" className="text-sm font-medium transition-colors hover:text-primary">
+          <Link href="https://www.linkedin.com/company/clean-pigg-ai-lab/" className="text-sm font-medium transition-colors hover:text-primary">
             Our Company
           </Link>
           <Link href="/" className="text-sm font-medium transition-colors hover:text-primary">
@@ -48,7 +48,11 @@ export function Navbar() {
           <Link href="#contact" className="text-sm font-medium transition-colors hover:text-primary">
             What&apos;s New
           </Link>
-          <Button>Help</Button>
+          <Button asChild>
+              <Link href="mailto:cleanpigg@gmail.com?subject=Help%20Request%20from%20Website">
+                Help
+              </Link>
+            </Button>
           <ThemeToggle />
         </nav>
 
@@ -71,7 +75,7 @@ export function Navbar() {
                 Features
               </Link>
               <Link
-                href="#how-it-works"
+                href="#https://www.linkedin.com/company/clean-pigg-ai-lab/"
                 className="block text-sm font-medium transition-colors hover:text-primary"
                 onClick={toggleMenu}
               >
@@ -101,7 +105,11 @@ export function Navbar() {
               <div className="flex justify-start py-2">
                 <ThemeToggle />
               </div>
-              <Button size="sm" className="w-full">Help</Button>
+              <Button asChild>
+              <Link href="mailto:cleanpig@email.com?subject=Help%20Request%20from%20Website">
+                Help
+              </Link>
+            </Button>
             </div>
           </div>
         )}

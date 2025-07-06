@@ -82,7 +82,7 @@ export function Footer() {
             <h3 className="text-lg text-muted-foreground">Company</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="#" className="font-bold hover:text-primary transition-colors">
+                <Link href="https://www.linkedin.com/company/clean-pigg-ai-lab/" className="font-bold hover:text-primary transition-colors">
                   Our Company
                 </Link>
               </li>
@@ -97,7 +97,7 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="font-bold hover:text-primary transition-colors">
+                <Link href="mailto:cleanpigg@gmail.com?subject=Help%20Request%20from%20Website" className="font-bold hover:text-primary transition-colors">
                   Contact
                 </Link>
               </li>
