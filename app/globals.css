@@ -120,3 +120,71 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Add this to your globals.css or create a new CSS file */
+
+/* Ensure full width on all devices */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Main container fixes */
+.main-container {
+  width: 100vw;
+  min-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Mobile landscape specific fixes */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+  /* Ensure sections take full width in landscape */
+  section {
+    width: 100vw;
+    min-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  /* Fix container alignment */
+  .container {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Center content properly */
+  .flex {
+    justify-content: center;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+}
+
+/* Alternative: Use viewport units for consistent width */
+@media screen and (max-width: 768px) {
+  .responsive-section {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
+}
+
+/* Prevent horizontal scrolling */
+* {
+  box-sizing: border-box;
+}
+
+/* Ensure sections are properly centered */
+.section-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
