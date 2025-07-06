@@ -5,10 +5,11 @@ import { CTASection } from "@/components/cta-section";
 // import { HowItWorksSection } from "@/components/How-It-works";
 import { PricingSection } from "@/components/pricing";
 
+// className="flex flex-col min-h-screen"
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div >
       {/* <HeroSection /> */}
       {/* <FeaturesSection /> */}
       {/* <HowItWorksSection /> */}
