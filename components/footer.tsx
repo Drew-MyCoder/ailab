@@ -29,7 +29,7 @@ export function Footer() {
 
     const res = await addSubscription(formData)
     if (res?.successMessage) {
-        toast.success("Successfully subscribed to CleanPigg AILab!");
+        toast.success("Successfully subscribed to Clean Pigg AI Lab!");
         setSubscriptionData({  email: "" });
       } else {
           toast.error("Submission failed. Please try again.");
