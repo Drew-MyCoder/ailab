@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 const steps = [
   {
@@ -11,27 +11,35 @@ const steps = [
   {
     number: "02",
     title: "Run Audit",
-    description: "Our platform analyzes your system for biases, fairness, compliance, and performance.",
+    description:
+      "Our platform analyzes your system for biases, fairness, compliance, and performance.",
   },
   {
     number: "03",
     title: "Get Insights",
-    description: "Receive a detailed report with actionable recommendations and visualizations.",
+    description:
+      "Receive a detailed report with actionable recommendations and visualizations.",
   },
   {
     number: "04",
     title: "Collaborate & Improve",
-    description: "Share findings with your team, implement changes, and track progress in real-time.",
+    description:
+      "Share findings with your team, implement changes, and track progress in real-time.",
   },
-]
+];
 
 export function HowItWorksSection() {
   return (
-    <section id="how-it-works" className="w-full py-22 md:pb-34 lg:pb-70 dark:bg-white bg-black">
+    <section
+      id="how-it-works"
+      className="w-full py-22 md:pb-34 lg:pb-70 dark:bg-white bg-black container mx-auto"
+    >
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight dark:text-gray-900 text-white">How It Works</h2>
+            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight dark:text-gray-900 text-white">
+              How It Works
+            </h2>
             <p className="max-w-[900px] dark:text-gray-600 text-white md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               A simple, effective process to audit your AI systems
             </p>
@@ -51,12 +59,18 @@ export function HowItWorksSection() {
               >
                 {/* Number Circle */}
                 <div className="dark:bg-white bg-black flex items-center justify-center relative z-10 mb-10">
-                  <span className="text-7xl italic font-medium dark:text-black text-white">{step.number}</span>
+                  <span className="text-7xl italic font-medium dark:text-black text-white">
+                    {step.number}
+                  </span>
                 </div>
 
                 {/* Title and Description */}
-                <h3 className="text-xl font-bold dark:text-gray-900 text-white mt-4">{step.title}</h3>
-                <p className="dark:text-gray-600 text-white">{step.description}</p>
+                <h3 className="text-xl font-bold dark:text-gray-900 text-white mt-4">
+                  {step.title}
+                </h3>
+                <p className="dark:text-gray-600 text-white">
+                  {step.description}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -81,5 +95,5 @@ export function HowItWorksSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

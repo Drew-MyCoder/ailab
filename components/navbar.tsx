@@ -1,58 +1,83 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
-import { ThemeToggle } from "./theme-toggle"
-import Image from "next/image"
+import { useState } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
+import { ThemeToggle } from "./theme-toggle";
+import Image from "next/image";
 // import { ThemeToggle } from "@/components/theme-toggle"
 
 export function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-4">
-      <div className="container flex h-16 items-center justify-between">
+    <header className="fixed top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-4 ">
+      <div className="container flex h-16 items-center justify-between  mx-auto">
         <div className="flex items-center space-x-6">
           <Link href="/" className="flex items-center space-x-2">
-            <Image src="/layer.png" width={32} height={32} alt="cpal logo" className="h-8 w-auto object-contain" />
+            <Image
+              src="/layer.png"
+              width={32}
+              height={32}
+              alt="cpal logo"
+              className="h-8 w-auto object-contain"
+            />
           </Link>
           <div className="hidden lg:flex lg:items-center lg:space-x-6">
-          <Link href="#features" className="text-sm font-medium transition-colors hover:text-primary">
-            Features
-          </Link>
-          <Link href="https://www.linkedin.com/company/clean-pigg-ai-lab/" className="text-sm font-medium transition-colors hover:text-primary">
-            Our Company
-          </Link>
-          <Link href="/" className="text-sm font-medium transition-colors hover:text-primary">
-            Developers
-          </Link>
-          <Link href="#pricing" className="text-sm font-medium transition-colors hover:text-primary">
-            Pricing
-          </Link>
+            <Link
+              href="#features"
+              className="text-sm font-medium transition-colors hover:text-primary"
+            >
+              Features
+            </Link>
+            <Link
+              href="https://www.linkedin.com/company/clean-pigg-ai-lab/"
+              className="text-sm font-medium transition-colors hover:text-primary"
+            >
+              Our Company
+            </Link>
+            <Link
+              href="/"
+              className="text-sm font-medium transition-colors hover:text-primary"
+            >
+              Developers
+            </Link>
+            <Link
+              href="#pricing"
+              className="text-sm font-medium transition-colors hover:text-primary"
+            >
+              Pricing
+            </Link>
           </div>
         </div>
 
         {/* Mobile menu button */}
-        <button className="block md:hidden" onClick={toggleMenu} aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}>
+        <button
+          className="block md:hidden"
+          onClick={toggleMenu}
+          aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
+        >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
         {/* Desktop navigation */}
         <nav className="hidden md:flex md:items-center md:space-x-6">
-          <Link href="#contact" className="text-sm font-medium transition-colors hover:text-primary">
+          <Link
+            href="#contact"
+            className="text-sm font-medium transition-colors hover:text-primary"
+          >
             What&apos;s New
           </Link>
           <Button asChild>
-              <Link href="mailto:cleanpigg@gmail.com?subject=Help%20Request%20from%20Website">
-                Help
-              </Link>
-            </Button>
+            <Link href="mailto:cleanpigg@gmail.com?subject=Help%20Request%20from%20Website">
+              Help
+            </Link>
+          </Button>
           <ThemeToggle />
         </nav>
 
@@ -106,14 +131,14 @@ export function Navbar() {
                 <ThemeToggle />
               </div>
               <Button asChild>
-              <Link href="mailto:cleanpig@email.com?subject=Help%20Request%20from%20Website">
-                Help
-              </Link>
-            </Button>
+                <Link href="mailto:cleanpig@email.com?subject=Help%20Request%20from%20Website">
+                  Help
+                </Link>
+              </Button>
             </div>
           </div>
         )}
       </div>
     </header>
-  )
+  );
 }

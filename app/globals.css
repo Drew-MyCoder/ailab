@@ -121,10 +121,9 @@
   }
 }
 
-
-
 /* Base styles for preventing horizontal scroll */
-html, body {
+html,
+body {
   width: 100%;
   overflow-x: hidden;
   margin: 0;
@@ -151,6 +150,12 @@ html, body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+.debug {
+  border: 1px solid red;
+}
+.debug-blue {
+  border: 1px solid blue;
 }
 
 /* Landscape orientation styles for mobile devices */
