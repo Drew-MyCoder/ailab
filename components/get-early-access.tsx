@@ -33,8 +33,10 @@ export function GetEarlyAccessBtn({ label = "Join Early Access" }) {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    console.log("HANDLING SUBMIT");
     const formData = new FormData(e.currentTarget);
     const res = await addRegistration(formData);
+    console.log("response", res);
     if (res?.successMessage) {
       toast.success("Successfully joined early access!");
       setFormData({ firstName: "", lastName: "", email: "" });

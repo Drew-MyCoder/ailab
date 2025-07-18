@@ -97,6 +97,7 @@ export function HeroSection() {
                 ethical standards
                 <motion.div variants={buttonVariants} whileHover="hover">
                   <Button
+                    asChild
                     size="lg"
                     variant="default"
                     className="px-1 py-6 mt-5 text-lg"

@@ -25,6 +25,7 @@ export function Navbar() {
               width={32}
               height={32}
               alt="cpal logo"
+              sizes="100vw"
               className="h-8 w-auto object-contain"
             />
           </Link>
