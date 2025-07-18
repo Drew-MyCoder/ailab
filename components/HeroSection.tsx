@@ -119,14 +119,15 @@ export function HeroSection() {
           <Image
             src={HeroImage}
             alt="image"
-            width={0}
+            width={0} // still needed to avoid layout shift
             height={0}
+            style={{ width: "auto", height: "auto ", margin:'auto auto' }}
             sizes="100vw"
-            className="w-full h-[350px] md:h-[450px] lg:h-[500px] lg:m-4"
+
           />
           {/* image placeholder */}
           <motion.div
-            className="flex items-center justify-center hidden"
+            className=" items-center justify-center hidden"
             variants={visualVariants}
           >
             <div className="relative w-full h-[350px] md:h-[450px] lg:h-[500px] lg:m-4 ">
