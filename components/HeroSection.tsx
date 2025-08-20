@@ -92,9 +92,7 @@ export function HeroSection() {
                 className="text-2xl text-muted-foreground md:text-2xl"
                 variants={itemVariants}
               >
-                Ensure fairness, detect biases and validate compliance with our
-                AI auditing platform--built to enhance transparency and uphold
-                ethical standards
+                Audit AI Systems for Fairness, Transparency and Compliance
                 <motion.div variants={buttonVariants} whileHover="hover">
                   <Button
                     asChild
@@ -121,9 +119,8 @@ export function HeroSection() {
             alt="image"
             width={0} // still needed to avoid layout shift
             height={0}
-            style={{ width: "auto", height: "auto ", margin:'auto auto' }}
+            style={{ width: "auto", height: "auto ", margin: "auto auto" }}
             sizes="100vw"
-
           />
           {/* image placeholder */}
           <motion.div

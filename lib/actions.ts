@@ -1,9 +1,10 @@
-"use server";
+// "use server";
 const googleScriptURL = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT as string;
 
 const subscriptionScriptURL = process.env.NEXT_PUBLIC_SUBSCRIPTION as string;
 
 export const addRegistration = async (formData: FormData) => {
+  console.log("GOOGLE SCRIPT URL", googleScriptURL);
   const firstName = formData.get("firstName")?.toString() || "";
   const lastName = formData.get("lastName")?.toString() || "";
   const email = formData.get("email")?.toString() || "";

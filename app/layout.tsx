@@ -12,15 +12,21 @@ const raleway = localFont({
     { path: "/fonts/Raleway-Medium.ttf", weight: "500", style: "normal" },
     { path: "/fonts/Raleway-Regular.ttf", weight: "400", style: "normal" },
     { path: "/fonts/Raleway-SemiBold.ttf", weight: "600", style: "normal" },
-  ]
-})
+  ],
+});
 
 export const metadata: Metadata = {
   title: "Clean Pigg AI Lab",
   description: "AI Auditing Platform",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, user-scalable=no"
+/>;
 
 export default function RootLayout({
   children,
@@ -29,10 +35,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body
-        className={`${raleway.className} antialiased`}
-      >
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange={false}>
+      <body className={`${raleway.className} antialiased`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+          disableTransitionOnChange={false}
+        >
           <Navbar />
           <main>{children}</main>
           <Toaster />
